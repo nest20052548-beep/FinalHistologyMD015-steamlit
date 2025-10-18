@@ -9,5 +9,5 @@
 
 ```bash
 pip install -r requirements.txt
-£อันนี้ต้องเปลื่ยนชื่อไฟล์
-streamlit run app.py
+streamlit run Stimulate.py
+
