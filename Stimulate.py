@@ -85,55 +85,55 @@ def Endocrine_Gland_Lab():
 },
 {
 "image": "image/Endocrine_gland/follicular_cell.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์ที่ลูกศรชี้มีชื่อว่าอะไร?","answer":"A:follicular cell","question1": "Question:เซลล์จากภาพมีหน้าที่อะไร?","answer1":"สร้าง thyroxine:"
 },
 {
 "image": "image/Endocrine_gland/germinal_center_of_palatine_tonsil.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างที่ลูกศรชี้มีชื่อว่าอะไร? ตอบแบบจำเพาะเจาะจง","answer":"A:secondary lymph phoid nodules/germinal center"
 },
 {
 "image": "image/Endocrine_gland/herring_bodies.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างที่ปลายลูกศรชี้มีชื่อว่าอะไร?","answer":"A:herring_bodies","question1": "Question:หน้าที่ของโครงสร้างดังกล่าวคืออะไร?","answer1":"เก็บ oxytoxin และ ADH:"
 },
 {
 "image": "image/Endocrine_gland/islet_of_langerhans.jpg",
-"question": "Question:จากภาพเป็นโครงสร้างอะไร?","answer":"A:islet of langerhans"
+"question": "Question:จากภาพเป็นโครงสร้างอะไร?","answer":"A:islet of langerhans","question1": "Question:โครงสร้างจากภาพมีหน้าที่อะไร?","answer1":"สร้าง hormones/insulin/glucagon/somatostatin:"
 },
 {
 "image": "image/Endocrine_gland/oxyphil_cell.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์ดังภาพมีชื่อว่าอะไร?","answer":"A:oxyphil cell"
 },
 {
 "image": "image/Endocrine_gland/parafollicular_cell.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์ดังภาพมีชื่อว่าอะไร?","answer":"A:Parafollicular cell","question1": "Question:เซลล์จากภาพมีหน้าที่อะไร?","answer1":"สร้าง Calcitonin:"
 },
 {
 "image": "image/Endocrine_gland/Parathyroid.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างด้านล่างจากภาพคืออะไร?*?","answer":"A:Parathyroid"
 },
 {
 "image": "image/Endocrine_gland/pars_distallis.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างจากเจริญมาจากอะไร**?","answer":"A:Oral ectoderm/Ranke's Pouch"
 },
 {
 "image": "image/Endocrine_gland/pars_glomerulosa.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:ชั้นจากภาพมีชื่อว่าอะไร?","answer":"A:Zona_glomerulosa"
 },
 {
 "image": "image/Endocrine_gland/pars_nervosa.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างจากภาพมีชื่อว่าอะไรตอบแบบจำเพาะเจาะจง**?","answer":"A:Pars nervosa"
 },
 {
 "image": "image/Endocrine_gland/pars_tuberalis.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างจากภาพมีชื่อว่าอะไร**?","answer":"A:pars tuberalis"
 },
 {
 "image": "image/Endocrine_gland/Pinealocytes.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์จากภาพมีชื่อว่าอะไร?","answer":"A:Pinealocytes"
 },
 {
 "image": "image/Endocrine_gland/pituicytes.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์จากภาพมีชื่อว่าอะไร","answer":"A:pituicytes"
 },
 {
 "image": "image/Endocrine_gland/zona_fasiculata2.jpg",
@@ -141,15 +141,15 @@ def Endocrine_Gland_Lab():
 },
 {
 "image": "image/Endocrine_gland/zona_fasiculata.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์จากชั้นที่ปลายลูกศรชี้ทำหน้าที่สร้างอะไร","answer":"A:Aldosterone"
 },
 {
 "image": "image/Endocrine_gland/zona_glomerulosa.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์จากชั้นที่ปลายลูกศรชี้ทำหน้าที่สร้างอะไร?","answer":"Answer:Cortisal"
 },
 {
 "image": "image/Endocrine_gland/zona_reticularis.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์จากชั้นที่ปลายลูกศรชี้ทำหน้าที่สร้างอะไร**?","answer":"A:Androgen"
 }
     ]
 
@@ -157,7 +157,7 @@ def Lymph_organ():
     return [
         {
 "image": "image/lymph_node/capsular_lymph_node.jpg",
-"question": "Question:พบในอวัยวะอะไร?","answer":"Answer: Epiglosttis"
+"question": "Question:พบในอวัยวะอะไร?","answer":"Answer:Lymph node"
 },
 {
 "image": "image/lymph_node/central_artery.jpg",
@@ -165,59 +165,59 @@ def Lymph_organ():
 },
 {
 "image": "image/lymph_node/cortex.jpg",
-"question": "Question:What is this structure name?","answer":"A: Alveolar knob"
+"question": "Question:ชั้นจากภาพมีชื่อว่าอะไร?","answer":"A: Cortex"
 },
 {
 "image": "image/lymph_node/epithelium_tonsil.jpg",
-"question": "Question:What is this structure name?","answer":"A:Terminal_bronchiole"
+"question": "Question:โครงสร้างจากภาพมีการเรียงตัวแบบใด?","answer":"A:Stratified squamous epithelium non keratinized"
 },
 {
 "image": "image/lymph_node/Hassal_corpuscle.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างในภาพพบในไหน?ตอบแบบจำเพาะเจาะจง","answer":"A:medulla of lymph node"
 },
 {
-"image": "image/lymph_node/Megakaryocte.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"image": "image/lymph_node/Megakaryocyte.jpg",
+"question": "Question:โครงสร้างดังภาพทำหน้าที่อะไร**?","answer":"A:develope to platelet"
 },
 {
-"image": "image/lymph_node/medullary_lymph_node_tonsil.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"image": "image/lymph_node/medullary_lymph_node.jpg",
+"question": "Question:โครงสร้างดังภาพพบในอวัยวะไหน?","answer":"A:lymph node"
 },
 {
 "image": "image/lymph_node/reticular_cell.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์ในภาพมีชื่อว่าอะไร?(ไม่น่าออก)","answer":"A:reticular cell"
 },
 {
-"image": "image/lymph_node/seondary_lymph_node_tonsil.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"image": "image/lymph_node/secondary_lymph_node_tonsil.jpg",
+"question": "Question:โครงสร้างในภาพมีชื่อว่าอะไรตอบแบบจำเพาะเจาะจง?","answer":"A:secondary lymph node"
 },
 {
 "image": "image/lymph_node/Sinusoid_capillary.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างดังภาพมีชื่อว่าอะไร**?","answer":"A:Sinusoid capillary"
 },
 {
 "image": "image/lymph_node/sphenic_sinus.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างดังภาพมีชื่อว่าอะไร**?","answer":"A:Sphenic sinus"
 },
 {
 "image": "image/lymph_node/Thymus.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างจากภาพพบในอวัยไหน**?","answer":"A:Thymus"
 },
 {
-"image": "image/lymph_node/tonsillar_crpt.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"image": "image/lymph_node/tonsillar_crypt.jpg",
+"question": "Question:โครงสร้างจากปลายลูกศรชี้มีชื่อว่าอะไร**?","answer":"A:Tonsillar crypts"
 },
 {
 "image": "image/lymph_node/trabaculae.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างจากปลายลูกศรชี้มีชื่อว่าอะไร?","answer":"A:trabaculae"
 },
 {
-"image": "image/lymph_node/white_pulp_n_spleen.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"image": "image/lymph_node/white_pulp_in_spleen.jpg",
+"question": "Question:โครงสร้างจากปลายลูกศรชี้มีชื่อว่าอะไร** ตอบแบบจำเพาะเจาะจง?","answer":"A:White pulp","question1":"โครงสร้างปลายลูกศรชี้พบในอวัยวะอะไร?","answer1":"spleen"
 },
 {
 "image": "image/lymph_node/Yellow_bone_marrow.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:โครงสร้างจากภาพพบในเนื้อเยื่ออะไร?","answer":"A:Bone"
 }
     ]
 
@@ -237,4 +237,5 @@ if choice == "Respiratory":
 elif choice == "Lymph_organ":
     run_quiz(Lymph_organ(), "Lymphoid Organs")
 elif choice == "Endocrine":
+
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
