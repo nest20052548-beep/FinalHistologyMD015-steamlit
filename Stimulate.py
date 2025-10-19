@@ -73,8 +73,8 @@ def run_quiz(quiz_data, topic_name):
 def Respiratory_lab():
     return [
         {"image": "image/Respiratory/epiglottis.jpg", "question": "พบในอวัยวะอะไร?", "answer": "Epiglottis"},
-        {"image": "image//Respiratory/smooth_muscle.jpg", "question": "เซลล์จากภาพคือเซลล์อะไร", "answer": "smooth muscle cell"},
-        {"image": "image//Respiratory/alveolar_knob.jpg", "question": "โครงสร้างจากภาพชื่อว่าอะไร?", "answer": "Alveolar knob","question1":"พบในไหน?","answer1":"terminal_bronchiole"}
+        {"image": "image//Respiratory/smooth_muscle.jpg", "question": "A:เซลล์จากภาพคือเซลล์อะไร", "answer": "smooth muscle cell"},
+        {"image": "image//Respiratory/alveolar_knob.jpg", "question": "A:โครงสร้างจากภาพชื่อว่าอะไร?", "answer": "A:Alveolar knob","question1":"B:พบในไหน?","answer1":"B:terminal bronchiole"}
     ]
 
 def Endocrine_Gland_Lab():
@@ -259,6 +259,7 @@ elif choice == "Lymph_organ":
 elif choice == "Endocrine":
 
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
+
 
 
 
