@@ -19,30 +19,50 @@ def put_thai_text(image_path, text, font_path="THSarabunNew.ttf", font_size=36, 
 def run_quiz(quiz_data, topic_name):
     st.header(f"🧠 Quiz: {topic_name}")
 
+    # -------------------------------
+    # ตั้งค่าเริ่มต้นใน session state
+    # -------------------------------
     if "quiz_index" not in st.session_state:
         st.session_state.quiz_index = 0
         st.session_state.show_answer = False
 
+    # -------------------------------
+    # ดึงคำถามปัจจุบัน
+    # -------------------------------
     quiz = quiz_data[st.session_state.quiz_index]
+
     st.subheader(f"Question {st.session_state.quiz_index + 1} / {len(quiz_data)}")
     st.write(quiz["question"])
 
-    img = Image.open(quiz["image"])
-    st.image(img, caption="ภาพคำถาม", use_container_width=True)
+    # ถ้ามี question1 → แสดงต่อทันที
+    if "question1" in quiz:
+        st.write(quiz["question1"])
 
-    # ปุ่มโชว์เฉลย
+    # แสดงภาพคำถาม
+    if "image" in quiz:
+        img = Image.open(quiz["image"])
+        st.image(img, caption="ภาพคำถาม", use_container_width=True)
+
+    # -------------------------------
+    # ปุ่มดูเฉลย
+    # -------------------------------
     if st.button("✅ ดูเฉลย"):
         st.session_state.show_answer = True
 
+    # -------------------------------
+    # แสดงเฉลย (answer + answer1)
+    # -------------------------------
     if st.session_state.show_answer:
         st.success(quiz["answer"])
-        if "question1" in quiz and "answer1" in quiz:
-            st.write(quiz["question1"])
+        if "answer1" in quiz:
             st.success(quiz["answer1"])
 
+        # ปุ่มไปข้อถัดไป
         if st.button("➡️ ข้อต่อไป"):
             st.session_state.quiz_index += 1
             st.session_state.show_answer = False
+
+            # ถ้าทำครบหมดแล้ว ให้รีเซ็ต
             if st.session_state.quiz_index >= len(quiz_data):
                 st.session_state.quiz_index = 0
                 st.success("🎉 ทำครบหมดแล้ว!")
@@ -239,3 +259,4 @@ elif choice == "Lymph_organ":
 elif choice == "Endocrine":
 
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
+
