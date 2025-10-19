@@ -46,8 +46,10 @@ def run_quiz(quiz_data, topic_name):
     # -------------------------------
     # ปุ่มดูเฉลย
     # -------------------------------
-    if st.button("✅ ดูเฉลย"):
-        st.session_state.show_answer = True
+    if not st.session_state.show_answer:
+        if st.button("✅ ดูเฉลย", key="show_answer_btn"):
+            st.session_state.show_answer = True
+            st.rerun()
 
     # -------------------------------
     # แสดงเฉลย (answer + answer1)
@@ -58,7 +60,7 @@ def run_quiz(quiz_data, topic_name):
             st.success(quiz["answer1"])
 
         # ปุ่มไปข้อถัดไป
-        if st.button("➡️ ข้อต่อไป"):
+        if st.button("➡️ ข้อต่อไป", key="next_btn"):
             st.session_state.quiz_index += 1
             st.session_state.show_answer = False
 
@@ -66,6 +68,8 @@ def run_quiz(quiz_data, topic_name):
             if st.session_state.quiz_index >= len(quiz_data):
                 st.session_state.quiz_index = 0
                 st.success("🎉 ทำครบหมดแล้ว!")
+            
+            st.rerun()
 
 # -----------------------------
 # Data ทั้ง 3 หมวด
@@ -257,9 +261,4 @@ if choice == "Respiratory":
 elif choice == "Lymph_organ":
     run_quiz(Lymph_organ(), "Lymphoid Organs")
 elif choice == "Endocrine":
-
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
-
-
-
-
