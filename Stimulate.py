@@ -105,7 +105,7 @@ def Endocrine_Gland_Lab():
 },
 {
 "image": "image/Endocrine_gland/Chromophobes.jpg",
-"question": "Question:What is cell name?","answer":"A:Chromophobes"
+"question": "Question:เซลล์ที่ลูกศรชี้ชื่อว่าอะไร?","answer":"A:Chromophobes"
 },
 {
 "image": "image/Endocrine_gland/follicular_cell.jpg",
@@ -161,7 +161,7 @@ def Endocrine_Gland_Lab():
 },
 {
 "image": "image/Endocrine_gland/zona_fasiculata2.jpg",
-"question": "Question:What is cell name details**?","answer":"A:smooth muscle cell"
+"question": "Question:เซลล์ที่ลูกศรชี้ชื่อว่าอะไร details**?","answer":"A:smooth muscle cell"
 },
 {
 "image": "image/Endocrine_gland/zona_fasiculata.jpg",
@@ -185,7 +185,7 @@ def Lymph_organ():
 },
 {
 "image": "image/lymph_node/central_artery.jpg",
-"question": "Question:What is Role of this structure?","answer":"A: Secrete mucous and water substance"
+"question": "Question:โครงสร้างที่ลูกศรชี้ชื่อว่าอะไร?","answer":"A: central_artery"
 },
 {
 "image": "image/lymph_node/cortex.jpg",
@@ -262,3 +262,4 @@ elif choice == "Lymph_organ":
     run_quiz(Lymph_organ(), "Lymphoid Organs")
 elif choice == "Endocrine":
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
+
