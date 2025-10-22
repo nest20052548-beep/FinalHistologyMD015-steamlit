@@ -316,7 +316,7 @@ def Urinary_system():
         },
         {
             "image": "image/Urinary_system/Urinary_bladder.jpg",
-            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออวัยวะอะไร?(ตอบแบบจำเพาะเจาะจง)",
+            "question": "A:โครงสร้างจากภาพคืออวัยวะอะไร?",
             "answer": "Urinary bladder"
         }
     ]
@@ -341,3 +341,4 @@ elif choice == "Endocrine":
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
 elif choice == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
+
