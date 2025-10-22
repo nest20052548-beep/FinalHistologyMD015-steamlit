@@ -244,6 +244,83 @@ def Lymph_organ():
 "question": "Question:โครงสร้างจากภาพพบในเนื้อเยื่ออะไร?","answer":"A:Bone"
 }
     ]
+def Urinary_system():
+    return [
+        {
+            "image": "image/Urinary_system/Ureter.jpg",
+            "question": "A:จากภาพคือโครงสร้างจากอวัยวะอะไร?",
+            "answer": "Ureter"
+        },
+        {
+            "image": "image/Urinary_system/Collecting_duct.jpg",
+            "question": "A:โครงสร้างจากภาพมีการเรียงตัวแบบใด?",
+            "answer": "Simple Cuboidal/Simple low cuboidal"
+        },
+        {
+            "image": "image/Urinary_system/Ureter.jpg",
+            "question": "A:โครงสร้างจากภาพคืออวัยวะอะไร?",
+            "answer": "Ureter"
+        },
+        {
+            "image": "image/Urinary_system/Vascular_pore.jpg",
+            "question": "A:ตำแหน่งดังกล่าวจากภาพจะพบเซลล์อะไรได้บ้าง?",
+            "answer": "Macula densa, Juxtaglomerular cell, Lacis cell (Extramesangial cell)"
+        },
+        {
+            "image": "image/Urinary_system/Collecting_duct1.jpg",
+            "question": "A:โครงสร้างจากภาพที่วงกลมสีแดงวงกลมคืออะไร?",
+            "answer": "Collecting duct",
+            "question1": "B:แยกได้โดย?",
+            "answer1": "มีลักษณะกลมๆ, Lumen สีใส, เห็น tight junction, เรียงตัวแบบ simple cuboidal"
+        },
+        {
+            "image": "image/Urinary_system/Female_urethra.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออะไร?",
+            "answer": "Female urethra",
+            "question1": "B:มีการเรียงตัวแบบใด",
+            "answer1": "Transitional epithelium / Urothelium"
+        },
+        {
+            "image": "image/Urinary_system/Macula_densa.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออะไร?",
+            "answer": "Macula densa cell",
+            "question1": "B:โครงสร้างจากปลายลูกศรชี้ทำหน้าที่อะไร?",
+            "answer1": "ช่วยตรวจจับระดับ NaCl ที่ผ่าน DCT"
+        },
+        {
+            "image": "image/Urinary_system/thin_urethra.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออะไร?(ตอบแบบจำเพาะเจาะจง)",
+            "answer": "Thin ascending loop of Henle"
+        },
+        {
+            "image": "image/Urinary_system/PCT.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออะไร?(ตอบแบบจำเพาะเจาะจง)",
+            "answer": "Proximal convoluted tubule"
+        },
+        {
+            "image": "image/Urinary_system/Urinary_bladder.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออวัยวะอะไร?",
+            "answer": "Urinary bladder"
+        },
+        {
+            "image": "image/Urinary_system/Penis.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออวัยวะอะไร?(ตอบแบบจำเพาะเจาะจง)",
+            "answer": "Spongy urethra of penis",
+            "question1": "B:โครงสร้างดังภาพมีการจัดเรียงตัวแบบใด?",
+            "answer1": "Pseudostratified columnar epithelium"
+        },
+        {
+            "image": "image/Urinary_system/Ureter6.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คือชั้นอะไร?",
+            "answer": "Muscularis or Muscular propria"
+        },
+        {
+            "image": "image/Urinary_system/Urinary_bladder.jpg",
+            "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออวัยวะอะไร?(ตอบแบบจำเพาะเจาะจง)",
+            "answer": "Urinary bladder"
+        }
+    ]
+
 
 # -----------------------------
 # ส่วนของ Streamlit App
@@ -253,7 +330,7 @@ st.sidebar.header("เลือกหมวดที่ต้องการท�
 
 choice = st.sidebar.selectbox(
     "เลือกหมวด",
-    ["Respiratory", "Lymph_organ", "Endocrine"]
+    ["Respiratory", "Lymph_organ", "Endocrine","Urinary system"]
 )
 
 if choice == "Respiratory":
@@ -262,4 +339,5 @@ elif choice == "Lymph_organ":
     run_quiz(Lymph_organ(), "Lymphoid Organs")
 elif choice == "Endocrine":
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
-
+elif choice == "Urinary system":
+    run_quiz(Urinary_system(), "Urinary System")
