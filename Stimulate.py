@@ -13,6 +13,7 @@ def put_thai_text(image_path, text, font_path="THSarabunNew.ttf", font_size=36, 
     draw.text((30, 30), text, fill=color, font=font)
     return img
 
+
 # -----------------------------
 # ฟังก์ชันหลักแสดงคำถาม
 # -----------------------------
@@ -68,11 +69,12 @@ def run_quiz(quiz_data, topic_name):
             if st.session_state.quiz_index >= len(quiz_data):
                 st.session_state.quiz_index = 0
                 st.success("🎉 ทำครบหมดแล้ว!")
-            
+
             st.rerun()
 
+
 # -----------------------------
-# Data ทั้ง 3 หมวด
+# Data Section
 # -----------------------------
 def Respiratory_lab():
     return [
@@ -322,13 +324,15 @@ def Urinary_system():
     ]
 def GI_Tract_Complete_Lab():
     return [
-        # 1.1 Esophagus (หลอดอาหาร) [1] /
+        # 1.1 Esophagus (หลอดอาหาร)
         {
             "image": "image/GI_Tract/Esophagus1.jpg",
             "question": "A:เยื่อบุผิวที่บุหลอดอาหาร (Esophagus) มีการเรียงตัวแบบใดตาม Checklist?",
-            "answer": "A:Stratified squamous non-keratinized epithelium (เยื่อบุผิวชนิด Squamous แบบมีหลายชั้นและไม่มีเคราติน)","question1":"B:พบในอวัยวะอะไร?","answer1":"B:Esophagus"
+            "answer": "A:Stratified squamous non-keratinized epithelium (เยื่อบุผิวชนิด Squamous แบบมีหลายชั้นและไม่มีเคราติน)",
+            "question1": "B:พบในอวัยวะอะไร?",
+            "answer1": "B:Esophagus"
         },
-        # 1.2 Stomach (กระเพาะอาหาร) - Parietal cell [1, 4] / 
+        # 1.2 Stomach - Parietal cell
         {
             "image": "image/GI_Tract/Parietal_cell1.jpg",
             "question": "A:เซลล์จากลูกศรชี้ชื่อเซลล์อะไร?",
@@ -336,95 +340,116 @@ def GI_Tract_Complete_Lab():
             "question1": "B:ตาม Checklist เซลล์นี้สร้างสารสำคัญอะไรอีกบ้าง?",
             "answer1": "B:Intrinsic factor + HCl"
         },
-        # 1.2 Stomach (กระเพาะอาหาร) - Chief cell [1, 4] /
+        # 1.2 Stomach - Chief cell
         {
             "image": "image/GI_Tract/Chief_cell.jpg",
             "question": "A:เซลล์จากปลายลูกศรชี้มีหน้าที่อะไร?",
             "answer": "A:Pepsinogen + Gastric lipase"
         },
-        # 1.3 Small Intestine - Surface absorbtive [1, 5] /
+        # 1.3 Small Intestine - Surface absorptive
         {
             "image": "image/GI_Tract/Surface_absorbtive.jpg",
-            "question": "A:เซลล์ที่จากปลายลูกศรชี้คือเซลล์อะไร",
-            "answer": "A: Surface absorptive cell"
+            "question": "A:เซลล์จากปลายลูกศรชี้คือเซลล์อะไร?",
+            "answer": "A:Surface absorptive cell"
         },
-        # 1.3 Small Intestine - Duodenum (Brunner’s glands) [1, 6] /
+        # 1.3 Small Intestine - Duodenum (Brunner’s glands)
         {
             "image": "image/GI_Tract/Duodenum_Brunner_glands.jpg",
-            "question": "A:โครงสร้างที่ลูกศรที่ชี้คืออะไร?",
-            "answer": "A:Brunner’s glands ",
-            "question1": "B:โครงสร้างที่ลูกศรชี้ทำหน้าที่สร้างอะไร?",
+            "question": "A:โครงสร้างที่ลูกศรชี้คืออะไร?",
+            "answer": "A:Brunner’s glands",
+            "question1": "B:โครงสร้างนี้ทำหน้าที่สร้างอะไร?",
             "answer1": "B:Alkaline mucin"
         },
-        # 1.3 Small Intestine - Jejunum (Long villi) [1, 7] /
+        # 1.3 Small Intestine - Jejunum
         {
             "image": "image/GI_Tract/Jejunum.jpg",
-            "question": "A:จากภาพดังกล่าวคือวัยวะอะไร?",
-            "answer": "A: Jejunum","question1":"B:รู้ได้อย่างไร?","answer1":"B:มี long villi ไม่มี Brunner Glands"
+            "question": "A:จากภาพดังกล่าวคืออวัยวะอะไร?",
+            "answer": "A:Jejunum",
+            "question1": "B:รู้ได้อย่างไร?",
+            "answer1": "B:มี long villi ไม่มี Brunner’s glands"
         },
-        # 1.3 Small Intestine - Ileum (Peyer’s patches) [1, 6] /
+        # 1.3 Small Intestine - Ileum
         {
             "image": "image/GI_Tract/Ileum.jpg",
             "question": "A:โครงสร้างที่ลูกศรชี้คือกลุ่มก้อนของอะไร?",
             "answer": "A:Peyer’s patches"
         },
-        # 1.4 Large intestine (ลำไส้ใหญ่) [2, 8] /
+        # 1.4 Large intestine
         {
             "image": "image/GI_Tract/Colon.jpg",
-            "question": "A:การเยื่องตัวของโครงสร้างดังกล่าวเป็นแบบใด?",
-            "answer": "A:Simple columnar epithelium with many goblet cells","question1":"โครงสร้างที่ลูกศรชี้ทำหน้าที่อะไร?","answer1":"สร้างเมือก"
+            "question": "A:การเรียงตัวของโครงสร้างดังกล่าวเป็นแบบใด?",
+            "answer": "A:Simple columnar epithelium with many goblet cells",
+            "question1": "B:โครงสร้างที่ลูกศรชี้ทำหน้าที่อะไร?",
+            "answer1": "B:สร้างเมือก"
         },
-        # 1.5 Appendix (ไส้ติ่ง) [2] /
+        # 1.5 Appendix
         {
             "image": "image/GI_Tract/Appendix.jpg",
             "question": "A:โครงสร้างดังภาพคืออวัยวะอะไร?",
-            "answer": "A: Appendix","question1":"รู้ได้อย่างไร?","answer1":"มี lumen ขนาดเล็กครบวงและมี  lymphanic nodules"
+            "answer": "A:Appendix",
+            "question1": "B:รู้ได้อย่างไร?",
+            "answer1": "B:มี lumen ขนาดเล็กครบวงและมี lymphatic nodules"
         },
-        # 1.6 Anus (ทวารหนัก) [2, 8] /
+        # 1.6 Anus
         {
             "image": "image/GI_Tract/Anus.jpg",
             "question": "A:จากภาพพบการเรียงตัวแบบใด?",
-            "answer": "A: Stratified squamous keratinized epithelium","question1":"โครงสร้างดังกล่าวพบในอวัยวะอะไร","answer1":"Anus"
+            "answer": "A:Stratified squamous keratinized epithelium",
+            "question1": "B:โครงสร้างดังกล่าวพบในอวัยวะอะไร?",
+            "answer1": "B:Anus"
         },
-        # 2.1 Liver (ตับ) - Portal Triad [2] /
+        # 2.1 Liver - Portal Triad
         {
             "image": "image/GI_Tract/Liver.jpg",
-            "question": "A:โครงสร้างจากภาพคืออะไร? ตอบแบบจำเพาะเจาะจง",
-            "answer": "A: Hepatic artery","question1":"โครงสร้างดังกล่าวพบในบริเวณ","answer1":"Portal triad or portal area"
+            "question": "A:โครงสร้างจากภาพคืออะไร? (ตอบแบบจำเพาะเจาะจง)",
+            "answer": "A:Hepatic artery",
+            "question1": "B:โครงสร้างดังกล่าวพบในบริเวณใด?",
+            "answer1": "B:Portal triad or portal area"
         },
-        # 2.1 Liver (ตับ) - Kupffer cells [2, 9] /
+        # 2.1 Liver - Kupffer cells
         {
             "image": "image/GI_Tract/Kupffer_cell.jpg",
             "question": "A:เซลล์จากปลายลูกศรชี้คือเซลล์อะไร?",
-            "answer": "A: Kupffer cells","question1":"เซลล์จากปลายลูกศรชี้ทำหน้าที่อะไร?","answer1":"ทำหน้าที่เป็น machopage ทำลาย bacteria"
+            "answer": "A:Kupffer cells",
+            "question1": "B:เซลล์จากปลายลูกศรชี้ทำหน้าที่อะไร?",
+            "answer1": "B:ทำหน้าที่เป็น macrophage ทำลาย bacteria"
         },
-        # 2.2 Gall bladder (ถุงน้ำดี) - Absence layers [3, 10] /
+        # 2.2 Small intestine - Paneth cell
         {
             "image": "image/GI_Tract/Paneth_cell.jpg",
-            "question": "A:เซลล์จากลูกศรชี้คออะไร?",
-            "answer": "A: Paneth cell","question1":"B:ทำหน้าที่สร้างอะไร?","answer1":"lysozyme"
+            "question": "A:เซลล์จากลูกศรชี้คืออะไร?",
+            "answer": "A:Paneth cell",
+            "question1": "B:ทำหน้าที่สร้างอะไร?",
+            "answer1": "B:Lysozyme"
         },
-        # 2.3 Pancreas (ตับอ่อน) - Exocrine gland [3, 11] /
+        # 2.3 Pancreas
         {
             "image": "image/GI_Tract/Centroacinar_cell.jpg",
-            "question": "A:เซลล์จากภาพคืออะไร??",
-            "answer": "A: Centroacinar cell","question1":"B:หน้าที่ของมันคืออะไร?","answer1":"พบในอวัยวะอะไร?","pancreas"
+            "question": "A:เซลล์จากภาพคืออะไร?",
+            "answer": "A:Centroacinar cell",
+            "question1": "B:พบในอวัยวะอะไร?",
+            "answer1": "B:Pancreas"
         },
-        # Gall bladder [3, 12] / 
+        # 2.4 Gall bladder
         {
             "image": "image/GI_Tract/Gall_bladder.jpg",
             "question": "A:โครงสร้างดังภาพมีการจัดเรียงตัวแบบใด?",
-            "answer": "A: Simple tall columnar epithelium","question1":"B:ทราบได้อย่างไร?","answer1":"B:ไม่มี muscularis mucosae,submucosa,simple tall columnar"
+            "answer": "A:Simple tall columnar epithelium",
+            "question1": "B:ทราบได้อย่างไร?",
+            "answer1": "B:ไม่มี muscularis mucosae, ไม่มี submucosa, ผิว simple tall columnar"
         },
+        # 2.5 Plicae circulares
         {
             "image": "image/GI_Tract/Plicae_circulares.jpg",
-            "question": "A:จากสร้างจากภาพคืออะไร??",
-            "answer": "A:Plicae Circulares"
+            "question": "A:โครงสร้างจากภาพคืออะไร?",
+            "answer": "A:Plicae circulares"
         }
-        
     ]
 
 
+# -----------------------------
+# ส่วนของ Streamlit App
+# -----------------------------
 # -----------------------------
 # ส่วนของ Streamlit App
 # -----------------------------
@@ -433,7 +458,7 @@ st.sidebar.header("เลือกหมวดที่ต้องการท�
 
 choice = st.sidebar.selectbox(
     "เลือกหมวด",
-    ["Respiratory", "Lymph_organ", "Endocrine","Urinary system","Gastrointestinal system"]
+    ["Respiratory", "Lymph_organ", "Endocrine", "Urinary system", "Gastrointestinal system"]
 )
 
 if choice == "Respiratory":
@@ -445,7 +470,9 @@ elif choice == "Endocrine":
 elif choice == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif choice == "Gastrointestinal system":
-    run_quiz(GI_Tract(), "Gastrointestinal system")
+    run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal system")
+
+
 
 
 
