@@ -347,7 +347,7 @@ def GI_Tract_Complete_Lab():
         },
         # 1.3 Small Intestine - Surface absorptive
         {
-            "image": "image/GI_Tract/Surface_absorbtive.jpg",
+            "image": "image/GI_Tract/Surface.jpg",
             "question": "A:เซลล์จากปลายลูกศรชี้คือเซลล์อะไร?",
             "answer": "A:Surface absorptive cell"
         },
@@ -407,7 +407,7 @@ def GI_Tract_Complete_Lab():
         },
         # 2.1 Liver - Kupffer cells
         {
-            "image": "image/GI_Tract/Kupffer_cell.jpg",
+            "image": "image/GI_Tract/Kupffer.jpg",
             "question": "A:เซลล์จากปลายลูกศรชี้คือเซลล์อะไร?",
             "answer": "A:Kupffer cells",
             "question1": "B:เซลล์จากปลายลูกศรชี้ทำหน้าที่อะไร?",
@@ -474,6 +474,7 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal Tract")
+
 
 
 
