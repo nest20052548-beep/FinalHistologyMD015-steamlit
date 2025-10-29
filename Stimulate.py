@@ -70,18 +70,29 @@ def run_quiz(quiz_data, topic_name):
         if "answer1" in quiz:
             st.success(quiz["answer1"])
 
-        # ปุ่มไปข้อถัดไป
-        if st.button("➡️ ข้อต่อไป", key="next_btn"):
-            st.session_state.quiz_index += 1
-            st.session_state.show_answer = False
+        col1, col2 = st.columns([1, 1])
+        
+        with col1:
+            # ปุ่มไปข้อถัดไป
+            if st.button("➡️ ข้อต่อไป", key="next_btn"):
+                st.session_state.quiz_index += 1
+                st.session_state.show_answer = False
 
-            # ถ้าทำครบหมดแล้ว ให้รีเซ็ตและสุ่มใหม่
-            if st.session_state.quiz_index >= len(st.session_state.shuffled_quiz):
+                # ถ้าทำครบหมดแล้ว ให้รีเซ็ตและสุ่มใหม่
+                if st.session_state.quiz_index >= len(st.session_state.shuffled_quiz):
+                    st.session_state.quiz_index = 0
+                    st.session_state.shuffled_quiz = random.sample(st.session_state.shuffled_quiz, len(st.session_state.shuffled_quiz))
+                    st.success("🎉 ทำครบหมดแล้ว! สุ่มคำถามใหม่แล้ว")
+
+                st.rerun()
+        
+        with col2:
+            # ปุ่มสุ่มใหม่
+            if st.button("🔀 สุ่มคำถามใหม่", key="shuffle_btn"):
                 st.session_state.quiz_index = 0
-                st.session_state.shuffled_quiz = random.sample(quiz_data, len(quiz_data))
-                st.success("🎉 ทำครบหมดแล้ว! สุ่มคำถามใหม่แล้ว")
-
-            st.rerun()
+                st.session_state.show_answer = False
+                st.session_state.shuffled_quiz = random.sample(st.session_state.shuffled_quiz, len(st.session_state.shuffled_quiz))
+                st.rerun()
 
 
 # -----------------------------
