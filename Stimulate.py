@@ -21,28 +21,38 @@ def run_quiz(quiz_data, topic_name):
     st.header(f"🧠 Quiz: {topic_name}")
 
     # -------------------------------
-    # ตั้งค่าเริ่มต้นใน session state
+    # ตั้งค่าเริ่มต้นใน session state และ Shuffle ข้อสอบ
     # -------------------------------
     if "quiz_index" not in st.session_state:
         st.session_state.quiz_index = 0
         st.session_state.show_answer = False
+        # สุ่มลำดับคำถามครั้งเดียวตอนเริ่มต้น
+        st.session_state.shuffled_quiz = random.sample(quiz_data, len(quiz_data))
 
     # -------------------------------
-    # ดึงคำถามปัจจุบัน
+    # ดึงคำถามปัจจุบันจาก shuffled list
     # -------------------------------
-    quiz = quiz_data[st.session_state.quiz_index]
+    quiz = st.session_state.shuffled_quiz[st.session_state.quiz_index]
 
-    st.subheader(f"Question {st.session_state.quiz_index + 1} / {len(quiz_data)}")
+    st.subheader(f"Question {st.session_state.quiz_index + 1} / {len(st.session_state.shuffled_quiz)}")
     st.write(quiz["question"])
 
     # ถ้ามี question1 → แสดงต่อทันที
     if "question1" in quiz:
         st.write(quiz["question1"])
 
-    # แสดงภาพคำถาม
+    # แสดงภาพคำถาม (เพิ่ม error handling)
     if "image" in quiz:
-        img = Image.open(quiz["image"])
-        st.image(img, caption="ภาพคำถาม", use_container_width=True)
+        try:
+            # ตรวจสอบว่าไฟล์มีอยู่จริง
+            if os.path.exists(quiz["image"]):
+                img = Image.open(quiz["image"])
+                st.image(img, caption="ภาพคำถาม", use_container_width=True)
+            else:
+                st.error(f"❌ ไม่พบไฟล์ภาพ: {quiz['image']}")
+                st.info("กรุณาตรวจสอบ path ของไฟล์ภาพ")
+        except Exception as e:
+            st.error(f"❌ เกิดข้อผิดพลาดในการโหลดภาพ: {str(e)}")
 
     # -------------------------------
     # ปุ่มดูเฉลย
@@ -65,10 +75,11 @@ def run_quiz(quiz_data, topic_name):
             st.session_state.quiz_index += 1
             st.session_state.show_answer = False
 
-            # ถ้าทำครบหมดแล้ว ให้รีเซ็ต
-            if st.session_state.quiz_index >= len(quiz_data):
+            # ถ้าทำครบหมดแล้ว ให้รีเซ็ตและสุ่มใหม่
+            if st.session_state.quiz_index >= len(st.session_state.shuffled_quiz):
                 st.session_state.quiz_index = 0
-                st.success("🎉 ทำครบหมดแล้ว!")
+                st.session_state.shuffled_quiz = random.sample(quiz_data, len(quiz_data))
+                st.success("🎉 ทำครบหมดแล้ว! สุ่มคำถามใหม่แล้ว")
 
             st.rerun()
 
@@ -79,8 +90,8 @@ def run_quiz(quiz_data, topic_name):
 def Respiratory_lab():
     return [
         {"image": "image/Respiratory/epiglottis.jpg", "question": "พบในอวัยวะอะไร?", "answer": "Epiglottis"},
-        {"image": "image//Respiratory/smooth_muscle.jpg", "question": "A:เซลล์จากภาพคือเซลล์อะไร", "answer": "smooth muscle cell"},
-        {"image": "image//Respiratory/alveolar_knob.jpg", "question": "A:โครงสร้างจากภาพชื่อว่าอะไร?", "answer": "A:Alveolar knob","question1":"B:พบในไหน?","answer1":"B:terminal bronchiole"}
+        {"image": "image/Respiratory/smooth_muscle.jpg", "question": "A:เซลล์จากภาพคือเซลล์อะไร", "answer": "smooth muscle cell"},
+        {"image": "image/Respiratory/alveolar_knob.jpg", "question": "A:โครงสร้างจากภาพชื่อว่าอะไร?", "answer": "A:Alveolar knob","question1":"B:พบในไหน?","answer1":"B:terminal bronchiole"}
     ]
 
 def Endocrine_Gland_Lab():
@@ -246,6 +257,7 @@ def Lymph_organ():
 "question": "Question:โครงสร้างจากภาพพบในเนื้อเยื่ออะไร?","answer":"A:Bone"
 }
     ]
+
 def Urinary_system():
     return [
         {
@@ -322,6 +334,7 @@ def Urinary_system():
             "answer": "Urinary bladder"
         }
     ]
+
 def GI_Tract_Complete_Lab():
     return [
         # 1.1 Esophagus (หลอดอาหาร)
@@ -352,11 +365,11 @@ def GI_Tract_Complete_Lab():
             "question": "A:เซลล์จากปลายลูกศรชี้คือเซลล์อะไร?",
             "answer": "A:Surface absorptive cell"
         },
-        # 1.3 Small Intestine - Duodenum (Brunner’s glands)
+        # 1.3 Small Intestine - Duodenum (Brunner's glands)
         {
             "image": "image/GI_Tract/Duodenum_Brunner_glands.jpg",
             "question": "A:โครงสร้างที่ลูกศรชี้คืออะไร?",
-            "answer": "A:Brunner’s glands",
+            "answer": "A:Brunner's glands",
             "question1": "B:โครงสร้างนี้ทำหน้าที่สร้างอะไร?",
             "answer1": "B:Alkaline mucin"
         },
@@ -366,13 +379,13 @@ def GI_Tract_Complete_Lab():
             "question": "A:จากภาพดังกล่าวคืออวัยวะอะไร?",
             "answer": "A:Jejunum",
             "question1": "B:รู้ได้อย่างไร?",
-            "answer1": "B:มี long villi ไม่มี Brunner’s glands"
+            "answer1": "B:มี long villi ไม่มี Brunner's glands"
         },
         # 1.3 Small Intestine - Ileum
         {
             "image": "image/GI_Tract/Ileum.jpg",
             "question": "A:โครงสร้างที่ลูกศรชี้คือกลุ่มก้อนของอะไร?",
-            "answer": "A:Peyer’s patches"
+            "answer": "A:Peyer's patches"
         },
         # 1.4 Large intestine
         {
@@ -425,54 +438,4 @@ def GI_Tract_Complete_Lab():
         # 2.3 Pancreas
         {
             "image": "image/GI_Tract/Centroacinar_cell.jpg",
-            "question": "A:เซลล์จากภาพคืออะไร?",
-            "answer": "A:Centroacinar cell",
-            "question1": "B:พบในอวัยวะอะไร?",
-            "answer1": "B:Pancreas"
-        },
-        # 2.4 Gall bladder
-        {
-            "image": "image/GI_Tract/Gall_bladder.jpg",
-            "question": "A:โครงสร้างดังภาพมีการจัดเรียงตัวแบบใด?",
-            "answer": "A:Simple tall columnar epithelium",
-            "question1": "B:ทราบได้อย่างไร?",
-            "answer1": "B:ไม่มี muscularis mucosae, ไม่มี submucosa, ผิว simple tall columnar"
-        },
-        # 2.5 Plicae circulares
-        {
-            "image": "image/GI_Tract/Plicae_circulares.jpg",
-            "question": "A:โครงสร้างจากภาพคืออะไร?",
-            "answer": "A:Plicae circulares"
-        }
-    ]
-
-
-# -----------------------------
-# ส่วนของ Streamlit App
-# -----------------------------
-# -----------------------------
-# ส่วนของ Streamlit App
-# -----------------------------
-st.title("🔬 Histology Quiz Viewer")
-st.sidebar.header("เลือกหมวดที่ต้องการทบทวน")
-
-choice = st.sidebar.selectbox(
-    "เลือกหมวด",
-    ["Respiratory", "Lymph_organ", "Endocrine", "Urinary system", "Gastrointestinal system"]
-)
-
-if choice == "Respiratory":
-    run_quiz(Respiratory_lab(), "Respiratory System")
-elif choice == "Lymph_organ":
-    run_quiz(Lymph_organ(), "Lymphoid Organs")
-elif choice == "Endocrine":
-    run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
-elif choice == "Urinary system":
-    run_quiz(Urinary_system(), "Urinary System")
-elif choice == "Gastrointestinal system":
-    run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal system")
-
-
-
-
-
+            "question": "A:เซลล์จากภาพคืออะไร?
