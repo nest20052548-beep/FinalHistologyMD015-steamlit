@@ -438,4 +438,46 @@ def GI_Tract_Complete_Lab():
         # 2.3 Pancreas
         {
             "image": "image/GI_Tract/Centroacinar_cell.jpg",
-            "question": "A:เซลล์จากภาพคืออะไร?
+            "question": "A:เซลล์จากภาพคืออะไร?",
+            "answer": "A:Centroacinar cell",
+            "question1": "B:พบในอวัยวะอะไร?",
+            "answer1": "B:Pancreas"
+        },
+        # 2.4 Gall bladder
+        {
+            "image": "image/GI_Tract/Gall_bladder.jpg",
+            "question": "A:โครงสร้างดังภาพมีการจัดเรียงตัวแบบใด?",
+            "answer": "A:Simple tall columnar epithelium",
+            "question1": "B:ทราบได้อย่างไร?",
+            "answer1": "B:ไม่มี muscularis mucosae, ไม่มี submucosa, ผิว simple tall columnar"
+        },
+        # 2.5 Plicae circulares
+        {
+            "image": "image/GI_Tract/Plicae_circulares.jpg",
+            "question": "A:โครงสร้างจากภาพคืออะไร?",
+            "answer": "A:Plicae circulares"
+        }
+    ]
+
+
+# -----------------------------
+# ส่วนของ Streamlit App
+# -----------------------------
+st.title("🔬 Histology Quiz Viewer")
+st.sidebar.header("เลือกหมวดที่ต้องการทบทวน")
+
+choice = st.sidebar.selectbox(
+    "เลือกหมวด",
+    ["Respiratory", "Lymph_organ", "Endocrine", "Urinary system", "Gastrointestinal system"]
+)
+
+if choice == "Respiratory":
+    run_quiz(Respiratory_lab(), "Respiratory System")
+elif choice == "Lymph_organ":
+    run_quiz(Lymph_organ(), "Lymphoid Organs")
+elif choice == "Endocrine":
+    run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
+elif choice == "Urinary system":
+    run_quiz(Urinary_system(), "Urinary System")
+elif choice == "Gastrointestinal system":
+    run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal system")
