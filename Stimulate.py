@@ -341,7 +341,7 @@ def GI_Tract_Complete_Lab():
         },
         # 1.2 Stomach - Chief cell
         {
-            "image": "image/GI_Tract/Chief_cell.jpg",
+            "image": "image/GI_Tract/Cheif.jpg",
             "question": "A:เซลล์จากปลายลูกศรชี้มีหน้าที่อะไร?",
             "answer": "A:Pepsinogen + Gastric lipase"
         },
@@ -474,5 +474,6 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal Tract")
+
 
 
