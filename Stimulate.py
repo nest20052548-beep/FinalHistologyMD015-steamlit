@@ -408,14 +408,20 @@ def GI_Tract_Complete_Lab():
         {
             "image": "image/GI_Tract/Centroacinar_cell.jpg",
             "question": "A:เซลล์จากภาพคืออะไร??",
-            "answer": "A: Centroacinar cell","question1":"B:หน้าที่ของมันคืออะไร?","answer1":"พบในอวัยวะอะไร?","Pancrease"
+            "answer": "A: Centroacinar cell","question1":"B:หน้าที่ของมันคืออะไร?","answer1":"พบในอวัยวะอะไร?","pancreas"
         },
         # Gall bladder [3, 12] / 
         {
             "image": "image/GI_Tract/Gall_bladder.jpg",
             "question": "A:โครงสร้างดังภาพมีการจัดเรียงตัวแบบใด?",
             "answer": "A: Simple tall columnar epithelium","question1":"B:ทราบได้อย่างไร?","answer1":"B:ไม่มี muscularis mucosae,submucosa,simple tall columnar"
+        },
+        {
+            "image": "image/GI_Tract/Plicae_circulares.jpg",
+            "question": "A:จากสร้างจากภาพคืออะไร??",
+            "answer": "A:Plicae Circulares"
         }
+        
     ]
 
 
@@ -440,5 +446,6 @@ elif choice == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif choice == "Gastrointestinal system":
     run_quiz(GI_Tract(), "Gastrointestinal system")
+
 
 
