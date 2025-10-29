@@ -444,3 +444,35 @@ def GI_Tract_Complete_Lab():
             "answer": "A:Plicae circulares"
         }
     ]
+# -----------------------------
+# เมนูเลือก topic
+# -----------------------------
+topic = st.sidebar.selectbox(
+    "🧭 เลือกหมวดหมู่",
+    ["Respiratory", "Endocrine gland", "Lymph organ", "Urinary system", "Gastrointestinal"]
+)
+
+# ✅ วางโค้ดนี้ต่อจาก selectbox ด้านบนเลย
+if "current_topic" not in st.session_state:
+    st.session_state.current_topic = topic
+
+if st.session_state.current_topic != topic:
+    st.session_state.quiz_index = 0
+    st.session_state.show_answer = False
+    st.session_state.current_topic = topic
+
+# -----------------------------
+# เรียกข้อมูลแต่ละหมวด
+# -----------------------------
+if topic == "Respiratory":
+    run_quiz(Respiratory_lab(), "Respiratory System")
+elif topic == "Endocrine gland":
+    run_quiz(Endocrine_Gland_Lab(), "Endocrine Gland")
+elif topic == "Lymph organ":
+    run_quiz(Lymph_organ(), "Lymphatic Organ")
+elif topic == "Urinary system":
+    run_quiz(Urinary_system(), "Urinary System")
+elif topic == "Gastrointestinal":
+    run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal Tract")
+
+
