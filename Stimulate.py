@@ -320,6 +320,103 @@ def Urinary_system():
             "answer": "Urinary bladder"
         }
     ]
+def GI_Tract_Complete_Lab():
+    return [
+        # 1.1 Esophagus (หลอดอาหาร) [1] /
+        {
+            "image": "image/GI_Tract/Esophagus1.jpg",
+            "question": "A:เยื่อบุผิวที่บุหลอดอาหาร (Esophagus) มีการเรียงตัวแบบใดตาม Checklist?",
+            "answer": "A:Stratified squamous non-keratinized epithelium (เยื่อบุผิวชนิด Squamous แบบมีหลายชั้นและไม่มีเคราติน)","question1":"B:พบในอวัยวะอะไร?","answer1":"B:Esophagus"
+        },
+        # 1.2 Stomach (กระเพาะอาหาร) - Parietal cell [1, 4] / 
+        {
+            "image": "image/GI_Tract/Parietal_cell1.jpg",
+            "question": "A:เซลล์จากลูกศรชี้ชื่อเซลล์อะไร?",
+            "answer": "A:Parietal cell (Oxyntic cell)",
+            "question1": "B:ตาม Checklist เซลล์นี้สร้างสารสำคัญอะไรอีกบ้าง?",
+            "answer1": "B:Intrinsic factor + HCl"
+        },
+        # 1.2 Stomach (กระเพาะอาหาร) - Chief cell [1, 4] /
+        {
+            "image": "image/GI_Tract/Chief_cell.jpg",
+            "question": "A:เซลล์จากปลายลูกศรชี้มีหน้าที่อะไร?",
+            "answer": "A:Pepsinogen + Gastric lipase"
+        },
+        # 1.3 Small Intestine - Surface absorbtive [1, 5] /
+        {
+            "image": "image/GI_Tract/Surface_absorbtive.jpg",
+            "question": "A:เซลล์ที่จากปลายลูกศรชี้คือเซลล์อะไร",
+            "answer": "A: Surface absorptive cell"
+        },
+        # 1.3 Small Intestine - Duodenum (Brunner’s glands) [1, 6] /
+        {
+            "image": "image/GI_Tract/Duodenum_Brunner_glands.jpg",
+            "question": "A:โครงสร้างที่ลูกศรที่ชี้คืออะไร?",
+            "answer": "A:Brunner’s glands ",
+            "question1": "B:โครงสร้างที่ลูกศรชี้ทำหน้าที่สร้างอะไร?",
+            "answer1": "B:Alkaline mucin"
+        },
+        # 1.3 Small Intestine - Jejunum (Long villi) [1, 7] /
+        {
+            "image": "image/GI_Tract/Jejunum.jpg",
+            "question": "A:จากภาพดังกล่าวคือวัยวะอะไร?",
+            "answer": "A: Jejunum","question1":"B:รู้ได้อย่างไร?","answer1":"B:มี long villi ไม่มี Brunner Glands"
+        },
+        # 1.3 Small Intestine - Ileum (Peyer’s patches) [1, 6] /
+        {
+            "image": "image/GI_Tract/Ileum.jpg",
+            "question": "A:โครงสร้างที่ลูกศรชี้คือกลุ่มก้อนของอะไร?",
+            "answer": "A:Peyer’s patches"
+        },
+        # 1.4 Large intestine (ลำไส้ใหญ่) [2, 8] /
+        {
+            "image": "image/GI_Tract/Colon.jpg",
+            "question": "A:การเยื่องตัวของโครงสร้างดังกล่าวเป็นแบบใด?",
+            "answer": "A:Simple columnar epithelium with many goblet cells","question1":"โครงสร้างที่ลูกศรชี้ทำหน้าที่อะไร?","answer1":"สร้างเมือก"
+        },
+        # 1.5 Appendix (ไส้ติ่ง) [2] /
+        {
+            "image": "image/GI_Tract/Appendix.jpg",
+            "question": "A:โครงสร้างดังภาพคืออวัยวะอะไร?",
+            "answer": "A: Appendix","question1":"รู้ได้อย่างไร?","answer1":"มี lumen ขนาดเล็กครบวงและมี  lymphanic nodules"
+        },
+        # 1.6 Anus (ทวารหนัก) [2, 8] /
+        {
+            "image": "image/GI_Tract/Anus.jpg",
+            "question": "A:จากภาพพบการเรียงตัวแบบใด?",
+            "answer": "A: Stratified squamous keratinized epithelium","question1":"โครงสร้างดังกล่าวพบในอวัยวะอะไร","answer1":"Anus"
+        },
+        # 2.1 Liver (ตับ) - Portal Triad [2] /
+        {
+            "image": "image/GI_Tract/Liver.jpg",
+            "question": "A:โครงสร้างจากภาพคืออะไร? ตอบแบบจำเพาะเจาะจง",
+            "answer": "A: Hepatic artery","question1":"โครงสร้างดังกล่าวพบในบริเวณ","answer1":"Portal triad or portal area"
+        },
+        # 2.1 Liver (ตับ) - Kupffer cells [2, 9] /
+        {
+            "image": "image/GI_Tract/Kupffer_cell.jpg",
+            "question": "A:เซลล์จากปลายลูกศรชี้คือเซลล์อะไร?",
+            "answer": "A: Kupffer cells","question1":"เซลล์จากปลายลูกศรชี้ทำหน้าที่อะไร?","answer1":"ทำหน้าที่เป็น machopage ทำลาย bacteria"
+        },
+        # 2.2 Gall bladder (ถุงน้ำดี) - Absence layers [3, 10] /
+        {
+            "image": "image/GI_Tract/Paneth_cell.jpg",
+            "question": "A:เซลล์จากลูกศรชี้คออะไร?",
+            "answer": "A: Paneth cell","question1":"B:ทำหน้าที่สร้างอะไร?","answer1":"lysozyme"
+        },
+        # 2.3 Pancreas (ตับอ่อน) - Exocrine gland [3, 11] /
+        {
+            "image": "image/GI_Tract/Centroacinar_cell.jpg",
+            "question": "A:เซลล์จากภาพคืออะไร??",
+            "answer": "A: Centroacinar cell","question1":"B:หน้าที่ของมันคืออะไร?","answer1":"พบในอวัยวะอะไร?","Pancrease"
+        },
+        # Gall bladder [3, 12] / 
+        {
+            "image": "image/GI_Tract/Gall_bladder.jpg",
+            "question": "A:โครงสร้างดังภาพมีการจัดเรียงตัวแบบใด?",
+            "answer": "A: Simple tall columnar epithelium","question1":"B:ทราบได้อย่างไร?","answer1":"B:ไม่มี muscularis mucosae,submucosa,simple tall columnar"
+        }
+    ]
 
 
 # -----------------------------
@@ -330,7 +427,7 @@ st.sidebar.header("เลือกหมวดที่ต้องการท�
 
 choice = st.sidebar.selectbox(
     "เลือกหมวด",
-    ["Respiratory", "Lymph_organ", "Endocrine","Urinary system"]
+    ["Respiratory", "Lymph_organ", "Endocrine","Urinary system","Gastrointestinal system"]
 )
 
 if choice == "Respiratory":
@@ -341,4 +438,7 @@ elif choice == "Endocrine":
     run_quiz(Endocrine_Gland_Lab(), "Endocrine Glands")
 elif choice == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
+elif choice == "Gastrointestinal system":
+    run_quiz(GI_Tract(), "Gastrointestinal system")
+
 
