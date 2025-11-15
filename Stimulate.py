@@ -78,7 +78,8 @@ def Respiratory_lab():
     return [
         {"image": "image/Respiratory/epiglottis.jpg", "question": "พบในอวัยวะอะไร?", "answer": "Epiglottis"},
         {"image": "image//Respiratory/smooth_muscle.jpg", "question": "A:เซลล์จากภาพคือเซลล์อะไร", "answer": "skeleton muscle cell or straited muscle cell","question1":"B พบในโครงอวัยวะอะไร?","answer1":"B:Vocal fold or True vocal cord"},
-        {"image": "image//Respiratory/alveolar_knob.jpg", "question": "A:โครงสร้างจากภาพชื่อว่าอะไร?", "answer": "A:Alveolar knob","question1":"B:พบในอวัยวะอะไร?:ตอบแบบจำเพาะเจาะจง","answer1":"B:Alveolar duct"}
+        {"image": "image//Respiratory/alveolar_knob.jpg", "question": "A:โครงสร้างจากภาพชื่อว่าอะไร?", "answer": "A:Alveolar knob","question1":"B:พบในอวัยวะอะไร?:ตอบแบบจำเพาะเจาะจง","answer1":"B:Alveolar duct"},
+        {"image": "image//Respiratory/3.jpg", "question": "A:จากภาพเป็นอวัยวะอะไร?", "answer": "A:False Vocal cord or Vestibular fold ","question1":"B:โครงสร้างจากปลายลูกศรชี้คืออะไร?:","answer1":"B:Seromunicous gland"}
     ]
 
 def Endocrine_Gland_Lab():
@@ -474,6 +475,7 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal Tract")
+
 
 
 
