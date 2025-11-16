@@ -47,8 +47,8 @@ def run_quiz(quiz_data, topic_name):
         to_gray = st.checkbox("🖤 แสดงเป็นภาพขาวดำ (Grayscale)")
 
         if to_gray:
-            gray = cv2.imread(img_path, 0)  # โหลดแบบ grayscale
-            st.image(gray, caption="ภาพคำถาม (Grayscale)", use_container_width=True)
+            img = cv2.imread(img_path, 0)  # โหลดแบบ grayscale
+            st.image(img, caption="ภาพคำถาม (Grayscale)", use_container_width=True)
         else:
             #อันนี้ขึ้นจุดจบ Bug Right here
             img = Image.open(img_path)
@@ -488,6 +488,7 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal Tract")
+
 
 
 
