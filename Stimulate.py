@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 import random
 import os
+import cv2
 
 # -----------------------------
 # ฟังก์ชันเขียนข้อความภาษาไทยบนภาพ
@@ -488,6 +489,7 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal Tract")
+
 
 
 
