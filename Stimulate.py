@@ -301,7 +301,7 @@ def Urinary_system():
             "answer1": "ช่วยตรวจจับระดับ NaCl ที่ผ่าน DCT"
         },
         {
-            "image": "image/Urinary_system/thin_urethra.jpg",
+            "image": "image/Urinary_system/1.jpg",
             "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออะไร?(ตอบแบบจำเพาะเจาะจง)",
             "answer": "Thin ascending loop of Henle"
         },
@@ -487,3 +487,4 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal")
+
