@@ -303,7 +303,7 @@ def Urinary_system():
         {
             "image": "image/Urinary_system/1.jpg",
             "question": "A:โครงสร้างจากภาพที่ปลายลูกศรชี้คืออะไร?(ตอบแบบจำเพาะเจาะจง)",
-            "answer": "Thin ascending loop of Henle"
+            "answer": "Thin descending loop of Henle"
         },
         {
             "image": "image/Urinary_system/PCT.jpg",
@@ -487,4 +487,5 @@ elif topic == "Urinary system":
     run_quiz(Urinary_system(), "Urinary System")
 elif topic == "Gastrointestinal":
     run_quiz(GI_Tract_Complete_Lab(), "Gastrointestinal")
+
 
